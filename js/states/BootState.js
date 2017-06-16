@@ -1,4 +1,4 @@
-// Boot State loads a json file with the level information and starts the Loading State
+// Boot State loads a json file with the level information and starts the Loading State.
 
 var FruitNinja = FruitNinja || {}; /* <---- This is used to create a namespace, or a named object
 												under which functions and variables can be created
@@ -28,5 +28,7 @@ FruitNinja.BootState.prototype.create = function() {
 	var level_text, level_data; 
 	level_text = this.game.cache.getText("level1");
 	level_data = JSON.parse(level_text);
+
 	this.game.state.start("LoadingState", true, false, level_data);
+	// this.game.state.start(stateToStart, clearGameWorld, clearCache, passedToTargetStatesInitFunction);
 }
